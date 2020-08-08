@@ -1,35 +1,8 @@
-/* TODO: W3C CSS Validator */
 /* Elements globaux */
 body{
     background-color: #252323;
     font-family: Montserrat;
     letter-spacing: 1px;
-}
-a, .card-see-more{
-    color: #C69C72;
-    font-weight: bold;
-    text-decoration: none;
-    display: inline-block;
-    position: relative;
-}
-a:hover, .card-see-more:hover{
-    color: #C69C72;
-    text-decoration: none;
-}
-a:after, .card-see-more:after{    
-    background: none repeat scroll 0 0 transparent;
-    content: "";
-    display: block;
-    height: 2px;
-    left: 50%;
-    position: absolute;
-    background: #C69C72;
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 0;
-}
-a:hover:after, .card-see-more:hover:after{ 
-    width: 100%; 
-    left: 0; 
 }
 h1,h2{
     color: #E9FFF9;
@@ -44,6 +17,35 @@ h1{
 h2{
     font-size: 2.9em;
     font-family: 'Lobster', cursive;
+}
+a, .linkStyleLike{
+    color: #C69C72;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+}
+a:hover, .linkStyleLike:hover{
+    color: #C69C72;
+    text-decoration: none;
+}
+a:after, .linkStyleLike:after{    
+    background: none repeat scroll 0 0 transparent;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #C69C72;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+a:hover:after, .linkStyleLike:hover:after{ 
+    width: 100%; 
+    left: 0; 
+}
+.linkStyleLike{
+    cursor: pointer;
 }
 .full-text{
     -webkit-transition: all 0.5s ease;
@@ -265,9 +267,6 @@ nav div{
 }
 .update-date-text{
     color: lightgray;
-}
-.card-see-more{
-    cursor: pointer;
 }
 
 /* Footer */
