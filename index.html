@@ -1,0 +1,511 @@
+<!-- TODO: Valider l'HTML (w3c) -->
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link type="text/css" rel="stylesheet" href="assets/css/bootstrap-grid.min.css">
+        <link type="text/css" rel="stylesheet" href="assets/css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+        <title>Accueil</title>
+    </head>
+    <body>
+        <header>
+            <!-- Navbar -->
+            <nav class="navbar d-flex">
+                <div class="d-flex">
+                    <img id="logoNavbar" class="mr-2 mt-1" src="assets/img/logo.png" alt="logo festival des films de plein air" />
+                    <a href="#seances" class="ml-3 nav-left-text">Séances</a>
+                    <a href="#actualites" class="ml-3 nav-left-text">Actualités</a>
+                </div>
+                <div class="navbar-right">  
+                    <a href="#" data-toggle="modal" data-target="#login" class="ml-3 userText">Connexion</a>
+                    <a href="#" data-toggle="modal" data-target="#register" class="ml-3 userText">Inscription</a>
+                    <img id="userIcon" src="assets/svg/user.svg" alt="">
+                </div>
+            </nav>
+            <!-- Modal Connexion -->
+            <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="text-center pt-2">
+                            <span class="text-right crossModalBtn" data-dismiss="modal"><img class="crossModalImg" src="assets/svg/cross.svg" alt="croix blanche" /></span>
+                            <p class="modal-title pt-5 mb-4" id="loginLabel">Connexion</p>
+                        </div>
+                        <form class="pt-4 pb-4 d-flex flex-column justify-content-center align-items-center">
+                            <div class="form-group">
+                              <label class="text-white" for="connectMailInput">Adresse mail</label>
+                              <input type="email" class="form-control" id="connectMailInput" placeholder="mail@exemple.com">
+                            </div>
+                            <div class="form-group pt-3 pb-5">
+                              <label class="text-white" for="connectPasswordInput">Mot de passe</label>
+                              <input type="password" class="form-control" id="connectPasswordInput" placeholder="">
+                            </div>
+                            <button type="button" class="btn btn-modal-validate font-weight-bold">Se connecter</button>
+                            <button type="button" class="btn btn-modal-back font-weight-light mt-4" data-dismiss="modal">Retour</button>
+                            <a href="" class="font-italic mt-5 mb-3" data-dismiss="modal" data-toggle="modal" data-target="#register">Pas encore de compte ? Inscrivez-vous !</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Inscription -->
+            <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="registerLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="text-center pt-2">
+                            <span class="text-right crossModalBtn" data-dismiss="modal"><img class="crossModalImg" src="assets/svg/cross.svg" alt="croix blanche" /></span>
+                            <p class="modal-title pt-5 mb-4" id="registerLabel">Inscription</p>
+                        </div>
+                        <form class="pt-4 pb-4 d-flex flex-column justify-content-center align-items-center">
+                            <div class="form-group">
+                                <label class="text-white" for="registerMailInput">Votre adresse mail</label>
+                                <input type="email" class="form-control" id="registerMailInput" placeholder="mail@exemple.com">
+                            </div>
+                            <div class="form-group pt-3">
+                                <label class="text-white" for="registerPasswordInput">Votre mot de passe</label>
+                                <input type="password" class="form-control mb-2" id="registerPasswordInput" placeholder="+ de 8 caractères, 1 chiffre, 1 majuscule">
+                                <small class="text-white font-italic">Celui-ci doit contenir au moins huit caractères, un chiffre et une majuscule</small>
+                            </div>
+                            <div class="form-group pt-3 pb-5">
+                                <label class="text-white" for="registerPasswordConfirmInput">Confirmez votre mot de passe</label>
+                                <input type="password" class="form-control mb-2" id="registerPasswordConfirmInput" placeholder="Le même que précédemment">
+                            </div>
+                            <button type="button" class="btn btn-modal-validate font-weight-bold">S'inscrire</button>
+                            <button type="button" class="btn btn-modal-back font-weight-light mt-4" data-dismiss="modal">Retour</button>
+                            <a href="" class="font-italic mt-5 mb-3" data-dismiss="modal" data-toggle="modal" data-target="#login">Déjà un compte ? Connectez-vous !</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Carrousel -->
+            <div id="carouselFadeExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-fade-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-fade-to="1"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100 carouselImage" src="assets/img/main_actu.jpeg" data-src="holder.js/900x400?theme=social" alt="First slide">
+                        <div class="carousel-caption text-center mb-5 d-flex align-items-center">
+                            <h3>La première édition approche à grands pas !</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100 carouselImage" src="assets/img/natalie-portman.jpeg" data-src="holder.js/900x400?theme=industrial" alt="Second slide">
+                        <div class="carousel-caption text-center mb-5 d-flex align-items-center">
+                            <h3>Natalie Portman à la diffusion de Song to Song !</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="container-fluid">
+                <!-- Présentation du Festival -->
+                <h1 class="homePageTitles">Festival des Films de Plein Air</h1>
+                <p class="text-white presentationText">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                    galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                    popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of
+                    Lorem Ipsum.</p>
+                <p class="text-white presentationText">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                    galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                    popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of
+                    Lorem Ipsum.</p>
+                <h2 id="seances">Prochaines séances</h2>
+                <!-- Cards séances de films -->
+                <div class="row mt-3">
+                    <div class="card col-md-6 col-lg-4" id="card1">
+                        <h4 class="card-title ml-2 mb-4">Coffee and cigarettes</h4>
+                        <div class="card-horizontal">
+                            <div class="img-square-wrapper">
+                                <img class="card-img" src="assets/img/coffee-and-cigarettes.jpg" alt="Card image cap">
+                                <button class="card-btn text-center" data-toggle="modal" data-target="#movie1">Se préinscrire</button>
+                            </div>
+                            <!-- Modal -->
+                            <div class="modal fade" id="movie1" tabindex="-1" role="dialog" aria-labelledby="movie1Label" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="text-center pt-2">
+                                            <span class="text-right crossModalBtn" data-dismiss="modal"><img class="crossModalImg" src="assets/svg/cross.svg" alt="croix blanche" /></span>
+                                            <p class="modal-title pt-5 mb-4" id="movie1Label">Se préinscrire à Coffee and cigarettes</p>
+                                        </div>
+                                        <div class="text-center">
+                                            <img class="card-img" src="assets/img/coffee-and-cigarettes.jpg" alt="Card image cap">
+                                            <p class="card-text card-date font-weight-bold mt-3">Date : 05 août 2021 à 18h00.</p>
+                                            <p class="card-text card-place font-weight-bold mb-4">Lieu : 5 place Pigalle, 75000 Paris.</p>
+                                            <p class="card-text modal-synopsis">Synopsis :</p>
+                                            <p class="card-text modal-synopsis ml-1 mr-1">Les interlocuteurs discutent de sujets aussi variés que la caféine, les glaces à l'eau, Abbott et Costello, 
+                                                les théories du complot contre Elvis Presley, l'art de préparer le thé anglais, les inventions de Nikola Tesla, 
+                                                le groupe rock imaginaire Sqürl, le Paris des années 1920 ou l'utilisation de la nicotine comme insecticide.</p>
+                                        </div>
+                                        <div class="pt-4 pb-4 d-flex flex-column justify-content-center align-items-center">
+                                            <button type="button" class="btn btn-modal-validate font-weight-bold">Se préinscrire</button>
+                                            <button type="button" class="btn btn-modal-back font-weight-light mt-4" data-dismiss="modal">Retour</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text card-date font-weight-bold">05 août 2021 à 18h00.</p>
+                                <p class="card-text card-place font-weight-bold">5 place Pigalle, 75000 Paris.</p>
+                                <p class="card-text card-synopsis" id="synopsis1">Les interlocuteurs discutent de sujets aussi variés que la caféine, les glaces à l'eau, Abbott et Costello, 
+                                    les théories du complot contre Elvis Presley, l'art de préparer le thé anglais, les inventions de Nikola Tesla, 
+                                    le groupe rock imaginaire Sqürl, le Paris des années 1920 ou l'utilisation de la nicotine comme insecticide.</p>
+                                <p class="card-see-more" id="seeMore1">Voir plus</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card col-md-6 col-lg-4" id="card2">
+                        <h4 class="card-title ml-2 mb-4">Whiplash</h4>
+                        <div class="card-horizontal">
+                            <div class="img-square-wrapper">
+                                <img class="card-img" src="assets/img/whiplash.jpg" alt="Card image cap">
+                                <button class="card-btn text-center" data-toggle="modal" data-target="#movie2">Se préinscrire</button>
+                            </div>
+                            <!-- Modal -->
+                            <div class="modal fade" id="movie2" tabindex="-1" role="dialog" aria-labelledby="movie2Label" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="text-center pt-2">
+                                            <span class="text-right crossModalBtn" data-dismiss="modal"><img class="crossModalImg" src="assets/svg/cross.svg" alt="croix blanche" /></span>
+                                            <p class="modal-title pt-5 mb-4" id="movie2Label">Se préinscrire à Whiplash</p>
+                                        </div>
+                                        <div class="text-center">
+                                            <img class="card-img" src="assets/img/whiplash.jpg" alt="Card image cap">
+                                            <p class="card-text card-date font-weight-bold mt-3">Date : 05 août 2021 à 21h30.</p>
+                                            <p class="card-text card-place font-weight-bold mb-4">Lieu : 5 place Pigalle, 75000 Paris.</p>
+                                            <p class="card-text modal-synopsis">Synopsis :</p>
+                                            <p class="card-text modal-synopsis ml-1 mr-1">Andrew Neiman est un jeune batteur de jazz de 19 ans. Il vient d'intégrer le prestigieux Shaffer Conservatory de New York, 
+                                                l'une des meilleures écoles de musique du pays. Aspirant à devenir le nouveau Buddy Rich, il est repéré par le très exigeant Terence Fletcher, enseignant et chef d'orchestre à Shaffer.
+                                                Andrew s'entraîne avec acharnement pour accéder aux attentes toujours plus inaccessibles de Fletcher. Sous prétexte de pousser ses élèves au-delà de leurs limites, ce dernier alterne les conseils amicaux et les déchaînements d'injures...</p>
+                                        </div>
+                                        <div class="pt-4 pb-4 d-flex flex-column justify-content-center align-items-center">
+                                            <button type="button" class="btn btn-modal-validate font-weight-bold">Se préinscrire</button>
+                                            <button type="button" class="btn btn-modal-back font-weight-light mt-4" data-dismiss="modal">Retour</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text card-date font-weight-bold">05 août 2021 à 21h30.</p>
+                                <p class="card-text card-place font-weight-bold">5 place Pigalle, 75000 Paris.</p>
+                                <p class="card-text card-synopsis" id="synopsis2">Andrew Neiman est un jeune batteur de jazz de 19 ans. Il vient d'intégrer le prestigieux Shaffer Conservatory de New York, 
+                                    l'une des meilleures écoles de musique du pays. Aspirant à devenir le nouveau Buddy Rich, il est repéré par le très exigeant Terence Fletcher, enseignant et chef d'orchestre à Shaffer.
+                                    Andrew s'entraîne avec acharnement pour accéder aux attentes toujours plus inaccessibles de Fletcher. Sous prétexte de pousser ses élèves au-delà de leurs limites, ce dernier alterne les conseils amicaux et les déchaînements d'injures...</p>
+                                <p class="card-see-more" id="seeMore2">Voir plus</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card col-md-6 col-lg-4" id="card3">
+                        <h4 class="card-title ml-2 mb-4">Une famille heureuse</h4>
+                        <div class="card-horizontal">
+                            <div class="img-square-wrapper">
+                                <img class="card-img" src="assets/img/famille-heureuse.jpg" alt="Card image cap">
+                                <button class="card-btn text-center" data-toggle="modal" data-target="#movie3">Se préinscrire</button>
+                            </div>
+                            <!-- Modal -->
+                            <div class="modal fade" id="movie3" tabindex="-1" role="dialog" aria-labelledby="movie3Label" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="text-center pt-2">
+                                            <span class="text-right crossModalBtn" data-dismiss="modal"><img class="crossModalImg" src="assets/svg/cross.svg" alt="croix blanche" /></span>
+                                            <p class="modal-title pt-5 mb-4" id="movie3Label">Se préinscrire à Une famille heureuse</p>
+                                        </div>
+                                        <div class="text-center">
+                                            <img class="card-img" src="assets/img/famille-heureuse.jpg" alt="Card image cap">
+                                            <p class="card-text card-date font-weight-bold mt-3">Date : 06 août 2021 à 11h00.</p>
+                                            <p class="card-text card-place font-weight-bold mb-4">Lieu : 5 place Pigalle, 75000 Paris.</p>
+                                            <p class="card-text modal-synopsis">Synopsis :</p>
+                                            <p class="card-text modal-synopsis ml-1 mr-1">Manana, une femme géorgienne enseignante dans un lycée de Tbilissi, vit dans le cadre familial traditionnel patriarcal géorgien où huit personnes et trois générations 
+                                                cohabitent dans un appartement urbain, conformément à la tradition : les grands parents traditionalistes et la grand-mère de mauvaise humeur qui ne cesse de faire des reproches à tous, le mari apathique, sa fille 
+                                                qui s'affale dans le canapé du salon, enlacée dans des postures langoureuses avec son amoureux, ainsi que son fils.</p>
+                                        </div>
+                                        <div class="pt-4 pb-4 d-flex flex-column justify-content-center align-items-center">
+                                            <button type="button" class="btn btn-modal-validate font-weight-bold">Se préinscrire</button>
+                                            <button type="button" class="btn btn-modal-back font-weight-light mt-4" data-dismiss="modal">Retour</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text card-date font-weight-bold">06 août 2021 à 11h00.</p>
+                                <p class="card-text card-place font-weight-bold">5 place Pigalle, 75000 Paris.</p>
+                                <p class="card-text card-synopsis" id="synopsis3">Manana, une femme géorgienne enseignante dans un lycée de Tbilissi, vit dans le cadre familial traditionnel patriarcal géorgien où huit personnes et trois générations 
+                                    cohabitent dans un appartement urbain, conformément à la tradition : les grands parents traditionalistes et la grand-mère de mauvaise humeur qui ne cesse de faire des reproches à tous, le mari apathique, sa fille 
+                                    qui s'affale dans le canapé du salon, enlacée dans des postures langoureuses avec son amoureux, ainsi que son fils.</p>
+                                <p class="card-see-more" id="seeMore3">Voir plus</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card col-md-6 col-lg-4" id="card4">
+                        <h4 class="card-title ml-2 mb-4">Song to song</h4>
+                        <div class="card-horizontal">
+                            <div class="img-square-wrapper">
+                                <img class="card-img" src="assets/img/song-to-song.jpg" alt="Affiche song to song">
+                                <button class="card-btn text-center" data-toggle="modal" data-target="#movie4">Se préinscrire</button>
+                            </div>
+                            <!-- Modal -->
+                            <div class="modal fade" id="movie4" tabindex="-1" role="dialog" aria-labelledby="movie4Label" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="text-center pt-2">
+                                            <span class="text-right crossModalBtn" data-dismiss="modal"><img class="crossModalImg" src="assets/svg/cross.svg" alt="croix blanche" /></span>
+                                            <p class="modal-title pt-5 mb-4" id="movie4Label">Se préinscrire à Song to song</p>
+                                        </div>
+                                        <div class="text-center">
+                                            <img class="card-img" src="assets/img/song-to-song.jpg" alt="Affiche song to song">
+                                            <p class="card-text card-date font-weight-bold mt-3">Date : 06 août 2021 à 14h30.</p>
+                                            <p class="card-text card-place font-weight-bold mb-4">Lieu : 5 place Pigalle, 75000 Paris.</p>
+                                            <p class="card-text modal-synopsis">Synopsis :</p>
+                                            <p class="card-text modal-synopsis ml-1 mr-1">À Austin, au Texas, Faye est une guitariste qui cherche la notoriété. Elle rencontre Cook, un magnat important de la scène musicale, 
+                                                qui devient son amant en espérant qu'il l'aidera à être connue. Puis elle couche avec BV, un chanteur en herbe, qui travaille avec Cook qui lui a permis de percer dans la chanson. 
+                                                Lors d'un voyage au Mexique, Cook remarque que BV et Faye sont très proches, leur liaison étant secrète.</p>
+                                        </div>
+                                        <div class="pt-4 pb-4 d-flex flex-column justify-content-center align-items-center">
+                                            <button type="button" class="btn btn-modal-validate font-weight-bold">Se préinscrire</button>
+                                            <button type="button" class="btn btn-modal-back font-weight-light mt-4" data-dismiss="modal">Retour</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text card-date font-weight-bold">06 août 2021 à 14h30.</p>
+                                <p class="card-text card-place font-weight-bold">5 place Pigalle, 75000 Paris.</p>
+                                <p class="card-text card-synopsis" id="synopsis4">À Austin, au Texas, Faye est une guitariste qui cherche la notoriété. Elle rencontre Cook, un magnat important de la scène musicale, 
+                                    qui devient son amant en espérant qu'il l'aidera à être connue. Puis elle couche avec BV, un chanteur en herbe, qui travaille avec Cook qui lui a permis de percer dans la chanson. 
+                                    Lors d'un voyage au Mexique, Cook remarque que BV et Faye sont très proches, leur liaison étant secrète.</p>
+                                <p class="card-see-more" id="seeMore4">Voir plus</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card col-md-6 col-lg-4" id="card5">
+                        <h4 class="card-title ml-2 mb-4">La tortue rouge</h4>
+                        <div class="card-horizontal">
+                            <div class="img-square-wrapper">
+                                <img class="card-img" src="assets/img/la-tortue-rouge.jpg" alt="Affiche la tortue rouge">
+                                <button class="card-btn text-center" data-toggle="modal" data-target="#movie5">Se préinscrire</button>
+                            </div>
+                            <!-- Modal -->
+                            <div class="modal fade" id="movie5" tabindex="-1" role="dialog" aria-labelledby="movie5Label" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="text-center pt-2">
+                                            <span class="text-right crossModalBtn" data-dismiss="modal"><img class="crossModalImg" src="assets/svg/cross.svg" alt="croix blanche" /></span>
+                                            <p class="modal-title pt-5 mb-4" id="movie5Label">Se préinscrire à La tortue rouge</p>
+                                        </div>
+                                        <div class="text-center">
+                                            <img class="card-img" src="assets/img/la-tortue-rouge.jpg" alt="Affiche la tortue rouge">
+                                            <p class="card-text card-date font-weight-bold mt-3">Date : 06 août 2021 à 19h00.</p>
+                                            <p class="card-text card-place font-weight-bold mb-4">Lieu : 5 place Pigalle, 75000 Paris.</p>
+                                            <p class="card-text modal-synopsis">Synopsis :</p>
+                                            <p class="card-text modal-synopsis ml-1 mr-1">Un naufragé se trouve dans l'eau, seul, au milieu de l'océan démonté. Il s'échoue sur une plage à proximité d'une forêt de bambous. 
+                                                L'homme se nourrit et explore la région : il monte au sommet d'une éminence rocheuse et s'aperçoit qu'il se trouve sur une île déserte peuplée d'une faune et d'une flore foisonnantes. 
+                                                Il y a de l'eau douce à l'intérieur de l'île et des fruits comestibles. Il est très vite remarqué par de petits crabes blancs qui le suivent et l'observent chaque fois qu'il vient sur la plage. 
+                                                Alors qu'il explore la partie rocheuse de la côte, alors qu'il tente de descendre en bas de la falaise pour trouver un tonneau flottant, il tombe dans un trou entouré de hauts rochers infranchissables...</p>
+                                        </div>
+                                        <div class="pt-4 pb-4 d-flex flex-column justify-content-center align-items-center">
+                                            <button type="button" class="btn btn-modal-validate font-weight-bold">Se préinscrire</button>
+                                            <button type="button" class="btn btn-modal-back font-weight-light mt-4" data-dismiss="modal">Retour</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text card-date font-weight-bold">06 août 2021 à 19h00.</p>
+                                <p class="card-text card-place font-weight-bold">5 place Pigalle, 75000 Paris.</p>
+                                <p class="card-text card-synopsis" id="synopsis5">Un naufragé se trouve dans l'eau, seul, au milieu de l'océan démonté. Il s'échoue sur une plage à proximité d'une forêt de bambous. 
+                                    L'homme se nourrit et explore la région : il monte au sommet d'une éminence rocheuse et s'aperçoit qu'il se trouve sur une île déserte peuplée d'une faune et d'une flore foisonnantes. 
+                                    Il y a de l'eau douce à l'intérieur de l'île et des fruits comestibles. Il est très vite remarqué par de petits crabes blancs qui le suivent et l'observent chaque fois qu'il vient sur la plage. 
+                                    Alors qu'il explore la partie rocheuse de la côte, alors qu'il tente de descendre en bas de la falaise pour trouver un tonneau flottant, il tombe dans un trou entouré de hauts rochers infranchissables...</p>
+                                <p class="card-see-more" id="seeMore5">Voir plus</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card col-md-6 col-lg-4" id="card6">
+                        <h4 class="card-title ml-2 mb-4">Réalité</h4>
+                        <div class="card-horizontal">
+                            <div class="img-square-wrapper">
+                                <img class="card-img" src="assets/img/realite.jpg" alt="Affiche realite">
+                                <button class="card-btn text-center" data-toggle="modal" data-target="#movie6">Se préinscrire</button>
+                            </div>
+                            <!-- Modal -->
+                            <div class="modal fade" id="movie6" tabindex="-1" role="dialog" aria-labelledby="movie6Label" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="text-center pt-2">
+                                            <span class="text-right crossModalBtn" data-dismiss="modal"><img class="crossModalImg" src="assets/svg/cross.svg" alt="croix blanche" /></span>
+                                            <p class="modal-title pt-5 mb-4" id="movie6Label">Se préinscrire à Réalité</p>
+                                        </div>
+                                        <div class="text-center">
+                                            <img class="card-img" src="assets/img/realite.jpg" alt="Affiche realite">
+                                            <p class="card-text card-date font-weight-bold mt-3">Date : 06 août 2021 à 21h30.</p>
+                                            <p class="card-text card-place font-weight-bold mb-4">Lieu : 5 place Pigalle, 75000 Paris.</p>
+                                            <p class="card-text modal-synopsis">Synopsis :</p>
+                                            <p class="card-text modal-synopsis ml-1 mr-1">Le réalisateur Jason Tantra (Alain Chabat) s'apprête à réaliser son premier film d'horreur. 
+                                                Bob Marshall (Jonathan Lambert), un riche producteur, accepte de le financer à condition que Jason trouve le meilleur gémissement de l'histoire du cinéma en 48 heures... 
+                                                Mais la réalité perd ses repères, le rêve, l'absurde, l'espace-temps se mélangent dans la narration qui devient un labyrinthe logique et une mise en abyme qui entraîne le spectateur dans une perplexité sans fond.</p>
+                                        </div>
+                                        <div class="pt-4 pb-4 d-flex flex-column justify-content-center align-items-center">
+                                            <button type="button" class="btn btn-modal-validate font-weight-bold">Se préinscrire</button>
+                                            <button type="button" class="btn btn-modal-back font-weight-light mt-4" data-dismiss="modal">Retour</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text card-date font-weight-bold">06 août 2021 à 21h30.</p>
+                                <p class="card-text card-place font-weight-bold">5 place Pigalle, 75000 Paris.</p>
+                                <p class="card-text card-synopsis" id="synopsis6">Le réalisateur Jason Tantra (Alain Chabat) s'apprête à réaliser son premier film d'horreur. 
+                                    Bob Marshall (Jonathan Lambert), un riche producteur, accepte de le financer à condition que Jason trouve le meilleur gémissement de l'histoire du cinéma en 48 heures... 
+                                    Mais la réalité perd ses repères, le rêve, l'absurde, l'espace-temps se mélangent dans la narration qui devient un labyrinthe logique et une mise en abyme qui entraîne le spectateur dans une perplexité sans fond.</p>
+                                <p class="card-see-more" id="seeMore6">Voir plus</p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- Fin du row (cards seances) -->
+                <h2 id="actualites">Actualités</h2>
+                <div class="row">
+                    <div class="card card-actu col-md-6 mb-4">
+                        <h4 class="card-title mb-4">La première édition approche à grands pas !</h4>
+                        <div class="card-horizontal-actu">
+                            <div class="img-square-wrapper">
+                                <img class="actu-img" src="assets/img/main_actu.jpeg" alt="premiere edition festival film plein air">
+                                <p class="update-date-text font-italic font-weight-light mt-2">Mis à jour le 08/07/2021</p>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text actu-text font-weight-light">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                                    scrambled it to make a type specimen book. Lorem Ipsum has been the industry's standard dummy text.
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                                    galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                                    popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of
+                                    Lorem Ipsum.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-actu col-md-6 mb-4">
+                        <h4 class="card-title mb-4">Natalie Portman à la diffusion de Song to Song !</h4>
+                        <div class="card-horizontal-actu">
+                            <div class="img-square-wrapper">
+                                <img class="actu-img" src="assets/img/natalie-portman.jpeg" alt="natalie portman festival film plein air">
+                                <p class="update-date-text font-italic font-weight-light mt-2">Mis à jour le 07/07/2021</p>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text actu-text font-weight-light">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                                    scrambled it to make a type specimen book. Lorem Ipsum has been the industry's standard dummy text.
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                                    galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                                    popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of
+                                    Lorem Ipsum.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-actu col-md-6 mb-4">
+                        <h4 class="card-title mb-4">La première édition approche à grands pas !</h4>
+                        <div class="card-horizontal-actu">
+                            <div class="img-square-wrapper">
+                                <img class="actu-img" src="assets/img/main_actu.jpeg" alt="premiere edition festival film plein air">
+                                <p class="update-date-text font-italic font-weight-light mt-2">Mis à jour le 04/07/2021</p>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text actu-text font-weight-light">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                                    scrambled it to make a type specimen book. Lorem Ipsum has been the industry's standard dummy text.
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                                    galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                                    popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of
+                                    Lorem Ipsum.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-actu col-md-6 mb-4">
+                        <h4 class="card-title mb-4">La première édition approche à grands pas !</h4>
+                        <div class="card-horizontal-actu">
+                            <div class="img-square-wrapper">
+                                <img class="actu-img" src="assets/img/natalie-portman.jpeg" alt="natalie portman festival film plein air">
+                                <p class="update-date-text font-italic font-weight-light mt-2">Mis à jour le 02/07/2021</p>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text actu-text font-weight-light">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                                    scrambled it to make a type specimen book. Lorem Ipsum has been the industry's standard dummy text.
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                                    galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                                    popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of
+                                    Lorem Ipsum.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- Fin du container-fluid -->
+        </main>
+        <footer class="justify-content-around text-center pt-5 pb-5">
+            <div class="d-flex flex-column">
+                <span class="text-white mb-3">Copyright Festival des Films de Plein Air</span>
+                <span class="text-white">Tous droits réservés</span>
+                <span><a href="#">Mentions légales</a></span>
+            </div>
+            <div class="d-flex flex-column" id="footerContact">
+                <span class="text-white mb-3">Contact</span>
+                <span><a href="#">exemple@mail.com</a></span>
+                <span><a href="#">00 00 00 00 00</a></span>
+            </div>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script>
+            $('#seeMore1').on('click',function(){
+                $("#synopsis1").toggleClass("full-text");
+                if($("#synopsis1").hasClass("full-text")) {
+                    $(this).text("Voir moins");
+                } else {
+                    $(this).text("Voir plus");
+                }
+            });
+            $('#seeMore2').on('click',function(){
+                $("#synopsis2").toggleClass("full-text");
+                if($("#synopsis2").hasClass("full-text")) {
+                    $(this).text("Voir moins");
+                } else {
+                    $(this).text("Voir plus");
+                }
+            });
+            $('#seeMore3').on('click',function(){
+                $("#synopsis3").toggleClass("full-text");
+                if($("#synopsis3").hasClass("full-text")) {
+                    $(this).text("Voir moins");
+                } else {
+                    $(this).text("Voir plus");
+                }
+            });
+            $('#seeMore4').on('click',function(){
+                $("#synopsis4").toggleClass("full-text");
+                if($("#synopsis4").hasClass("full-text")) {
+                    $(this).text("Voir moins");
+                } else {
+                    $(this).text("Voir plus");
+                }
+            });
+            $('#seeMore5').on('click',function(){
+                $("#synopsis5").toggleClass("full-text");
+                if($("#synopsis5").hasClass("full-text")) {
+                    $(this).text("Voir moins");
+                } else {
+                    $(this).text("Voir plus");
+                }
+            });
+            $('#seeMore6').on('click',function(){
+                $("#synopsis6").toggleClass("full-text");
+                if($("#synopsis6").hasClass("full-text")) {
+                    $(this).text("Voir moins");
+                } else {
+                    $(this).text("Voir plus");
+                }
+            });
+        </script>
+    </body>
+</html>
