@@ -1,7 +1,7 @@
 /* Elements globaux */
 body{
     background-color: #252323;
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     letter-spacing: 1px;
 }
 h1,h2{
@@ -303,6 +303,9 @@ footer{
     footer{
         font-size: 0.8em;
     }
+    .btn-modal-validate{
+        font-size: 0.8em !important;
+    }
 }
 
 /* Navbar */
@@ -489,16 +492,15 @@ footer{
         width:80%;
         left: 6%;
     }
-    .card-date, .card-place{
-        position: relative;
-        top: -50px;
-        left: -20px;
-    }
     #actualites{
         margin-top: -50px;
     }
     .card-title{
         font-size: 1.1em;
+    }
+    .btn-modal-validate{
+        font-size: 1em;
+        width:80%;
     }
 }
 
