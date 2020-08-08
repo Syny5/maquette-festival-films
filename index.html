@@ -1,4 +1,3 @@
-<!-- TODO: Valider l'HTML (w3c) -->
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -153,7 +152,7 @@
                                 <p class="card-text card-synopsis" id="synopsis1">Les interlocuteurs discutent de sujets aussi variés que la caféine, les glaces à l'eau, Abbott et Costello, 
                                     les théories du complot contre Elvis Presley, l'art de préparer le thé anglais, les inventions de Nikola Tesla, 
                                     le groupe rock imaginaire Sqürl, le Paris des années 1920 ou l'utilisation de la nicotine comme insecticide.</p>
-                                <p class="card-see-more" id="seeMore1">Voir plus</p>
+                                <p class="card-see-more linkStyleLike" id="seeMore1">Voir plus</p>
                             </div>
                         </div>
                     </div>
@@ -194,7 +193,7 @@
                                 <p class="card-text card-synopsis" id="synopsis2">Andrew Neiman est un jeune batteur de jazz de 19 ans. Il vient d'intégrer le prestigieux Shaffer Conservatory de New York, 
                                     l'une des meilleures écoles de musique du pays. Aspirant à devenir le nouveau Buddy Rich, il est repéré par le très exigeant Terence Fletcher, enseignant et chef d'orchestre à Shaffer.
                                     Andrew s'entraîne avec acharnement pour accéder aux attentes toujours plus inaccessibles de Fletcher. Sous prétexte de pousser ses élèves au-delà de leurs limites, ce dernier alterne les conseils amicaux et les déchaînements d'injures...</p>
-                                <p class="card-see-more" id="seeMore2">Voir plus</p>
+                                <p class="card-see-more linkStyleLike" id="seeMore2">Voir plus</p>
                             </div>
                         </div>
                     </div>
@@ -235,7 +234,7 @@
                                 <p class="card-text card-synopsis" id="synopsis3">Manana, une femme géorgienne enseignante dans un lycée de Tbilissi, vit dans le cadre familial traditionnel patriarcal géorgien où huit personnes et trois générations 
                                     cohabitent dans un appartement urbain, conformément à la tradition : les grands parents traditionalistes et la grand-mère de mauvaise humeur qui ne cesse de faire des reproches à tous, le mari apathique, sa fille 
                                     qui s'affale dans le canapé du salon, enlacée dans des postures langoureuses avec son amoureux, ainsi que son fils.</p>
-                                <p class="card-see-more" id="seeMore3">Voir plus</p>
+                                <p class="card-see-more linkStyleLike" id="seeMore3">Voir plus</p>
                             </div>
                         </div>
                     </div>
@@ -276,7 +275,7 @@
                                 <p class="card-text card-synopsis" id="synopsis4">À Austin, au Texas, Faye est une guitariste qui cherche la notoriété. Elle rencontre Cook, un magnat important de la scène musicale, 
                                     qui devient son amant en espérant qu'il l'aidera à être connue. Puis elle couche avec BV, un chanteur en herbe, qui travaille avec Cook qui lui a permis de percer dans la chanson. 
                                     Lors d'un voyage au Mexique, Cook remarque que BV et Faye sont très proches, leur liaison étant secrète.</p>
-                                <p class="card-see-more" id="seeMore4">Voir plus</p>
+                                <p class="card-see-more linkStyleLike" id="seeMore4">Voir plus</p>
                             </div>
                         </div>
                     </div>
@@ -319,7 +318,7 @@
                                     L'homme se nourrit et explore la région : il monte au sommet d'une éminence rocheuse et s'aperçoit qu'il se trouve sur une île déserte peuplée d'une faune et d'une flore foisonnantes. 
                                     Il y a de l'eau douce à l'intérieur de l'île et des fruits comestibles. Il est très vite remarqué par de petits crabes blancs qui le suivent et l'observent chaque fois qu'il vient sur la plage. 
                                     Alors qu'il explore la partie rocheuse de la côte, alors qu'il tente de descendre en bas de la falaise pour trouver un tonneau flottant, il tombe dans un trou entouré de hauts rochers infranchissables...</p>
-                                <p class="card-see-more" id="seeMore5">Voir plus</p>
+                                <p class="card-see-more linkStyleLike" id="seeMore5">Voir plus</p>
                             </div>
                         </div>
                     </div>
@@ -360,7 +359,7 @@
                                 <p class="card-text card-synopsis" id="synopsis6">Le réalisateur Jason Tantra (Alain Chabat) s'apprête à réaliser son premier film d'horreur. 
                                     Bob Marshall (Jonathan Lambert), un riche producteur, accepte de le financer à condition que Jason trouve le meilleur gémissement de l'histoire du cinéma en 48 heures... 
                                     Mais la réalité perd ses repères, le rêve, l'absurde, l'espace-temps se mélangent dans la narration qui devient un labyrinthe logique et une mise en abyme qui entraîne le spectateur dans une perplexité sans fond.</p>
-                                <p class="card-see-more" id="seeMore6">Voir plus</p>
+                                <p class="card-see-more linkStyleLike" id="seeMore6">Voir plus</p>
                             </div>
                         </div>
                     </div>
@@ -446,12 +445,12 @@
             <div class="d-flex flex-column">
                 <span class="text-white mb-3">Copyright Festival des Films de Plein Air</span>
                 <span class="text-white">Tous droits réservés</span>
-                <span><a href="#">Mentions légales</a></span>
+                <span class="linkStyleLike" id="legalNotice">Mentions légales</span>
             </div>
             <div class="d-flex flex-column" id="footerContact">
                 <span class="text-white mb-3">Contact</span>
-                <span><a href="#">exemple@mail.com</a></span>
-                <span><a href="#">00 00 00 00 00</a></span>
+                <span class="linkStyleLike" id="contactMailTo">exemple@mail.com</span>
+                <span class="linkStyleLike" id="contactPhoneTo">00 00 00 00 00</span>
             </div>
         </footer>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -505,6 +504,15 @@
                 } else {
                     $(this).text("Voir plus");
                 }
+            });
+            $('#contactMailTo').on('click', function(){
+                alert('Ouvre la messagerie de l\'utilisateur pour préparer un mail à l\'addresse indiquée');
+            });
+            $('#contactPhoneTo').on('click', function(){
+                alert('Appelle le numéro indiqué pour les utilisateurs mobiles');
+            });
+            $('#legalNotice').on('click', function(){
+                alert('Affiche la page / la modal des mentions légales');
             });
         </script>
     </body>
