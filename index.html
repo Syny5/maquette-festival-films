@@ -458,53 +458,27 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script>
-            $('#seeMore1').on('click',function(){
-                $("#synopsis1").toggleClass("full-text");
-                if($("#synopsis1").hasClass("full-text")) {
-                    $(this).text("Voir moins");
-                } else {
-                    $(this).text("Voir plus");
-                }
+            let index = 1;
+            while($('#seeMore' + index).length){ 
+                const synopsisIndex = index;
+                $('#seeMore' + index).on('click',function(){
+                    $("#synopsis" + synopsisIndex).toggleClass("full-text");
+                    if($("#synopsis" + synopsisIndex).hasClass("full-text")) {
+                        $(this).text("Voir moins");
+                    } else {
+                        $(this).text("Voir plus");
+                    }
+                });
+                index += 1;
+            }
+            $('#contactMailTo').on('click', function(){
+                alert('Ouvre la messagerie de l\'utilisateur pour préparer un mail à l\'addresse indiquée');
             });
-            $('#seeMore2').on('click',function(){
-                $("#synopsis2").toggleClass("full-text");
-                if($("#synopsis2").hasClass("full-text")) {
-                    $(this).text("Voir moins");
-                } else {
-                    $(this).text("Voir plus");
-                }
+            $('#contactPhoneTo').on('click', function(){
+                alert('Appelle le numéro indiqué pour les utilisateurs mobiles');
             });
-            $('#seeMore3').on('click',function(){
-                $("#synopsis3").toggleClass("full-text");
-                if($("#synopsis3").hasClass("full-text")) {
-                    $(this).text("Voir moins");
-                } else {
-                    $(this).text("Voir plus");
-                }
-            });
-            $('#seeMore4').on('click',function(){
-                $("#synopsis4").toggleClass("full-text");
-                if($("#synopsis4").hasClass("full-text")) {
-                    $(this).text("Voir moins");
-                } else {
-                    $(this).text("Voir plus");
-                }
-            });
-            $('#seeMore5').on('click',function(){
-                $("#synopsis5").toggleClass("full-text");
-                if($("#synopsis5").hasClass("full-text")) {
-                    $(this).text("Voir moins");
-                } else {
-                    $(this).text("Voir plus");
-                }
-            });
-            $('#seeMore6').on('click',function(){
-                $("#synopsis6").toggleClass("full-text");
-                if($("#synopsis6").hasClass("full-text")) {
-                    $(this).text("Voir moins");
-                } else {
-                    $(this).text("Voir plus");
-                }
+            $('#legalNotice').on('click', function(){
+                alert('Affiche la page / la modal des mentions légales');
             });
             $('#contactMailTo').on('click', function(){
                 alert('Ouvre la messagerie de l\'utilisateur pour préparer un mail à l\'addresse indiquée');
