@@ -220,6 +220,42 @@ nav div{
 .crossModalImg{
     width:20px;
 }
+.loader{
+    border: 8px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 8px solid #C69C72;
+    width: 60px;
+    height: 60px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+    display: none;
+}
+.check {
+    display: none;
+    font-size: 2em;
+    font-weight: bold;
+    color: #C69C72;
+    position: relative;
+    top: -55px;
+}
+.registeredConfirm{
+    display: none;
+    color: #C69C72;
+    font-weight: bold;
+    position: relative;
+    top: -25px;
+    text-align: center;
+    margin-bottom: -20px;
+}
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 
 /* Modal Connexion /Inscription */
 .form-group{
